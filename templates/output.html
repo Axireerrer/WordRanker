@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="edit-table">
+  <table class="table table-bordered border-dark table-striped table-success">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Cлово(Word)</th>
+        <th scope="col">Частота появления (TF)</th>
+        <th scope="col">Обратная частота документа (IDF)</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for word,tf,idf in items %}
+        <tr>
+            <td> {{ forloop.counter }} </td>
+            <td>{{ word }}</td>
+            <td>{{ tf }}</td>
+            <td>{{ idf }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
+
